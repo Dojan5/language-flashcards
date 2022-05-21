@@ -1,0 +1,7 @@
+@use './variables' as variables;
+@use 'sass:map';
+
+@function gap($size: "md", $screen: "none") {
+    $val: map.get(variables.$gap-values, $size);
+    @return $val;
+}  

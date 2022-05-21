@@ -1,0 +1,30 @@
+{
+    "vowels": [
+        {
+            "character": "あ",
+            "romanisation": "a",
+            "svg": ""
+        },
+        {
+            "character": "い",
+            "romanisation": "i",
+            "svg": ""
+        },
+        {
+            "character": "う",
+            "romanisation": "u",
+            "svg": ""
+        },
+        {
+            "character": "え",
+            "romanisation": "e",
+            "svg": ""
+        },
+        {
+            "character": "お",
+            "romanisation": "o",
+            "svg": ""
+        }
+    ],
+    "syllables": []
+}

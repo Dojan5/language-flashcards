@@ -1,0 +1,41 @@
+@use './variables' as variables;
+@use 'sass:map';
+
+//Media query mixin
+@mixin mq($size: xs) {
+    $breakpoint: map.get(variables.$breakpoints, $size);
+
+    @media only screen and (min-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
+@mixin backdrop {
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(12px);
+}
+
+@mixin bgclr($theme: light) {
+    $selected-theme: map.get(variables.$backgrounds, $theme);
+    @each $shade, $value in $selected-theme {
+        --#{$shade}: #{$value};
+    }
+}
+
+@mixin clr-variables($theme: light) {
+    $selected-theme: map.get(variables.$color-map, $theme);
+
+    @each $colour, $value in $selected-theme {
+        --#{$colour}: #{$value};
+    }
+}
+
+@mixin clr-props($bg: true) {
+    $theme: map.get(variables.$color-map, light);
+    @each $colour, $value in $theme {
+        &.#{$colour} {
+            @if $bg { background-color: var(--#{$colour}); }
+            @else { color: var(--#{$colour}); }
+        }
+    }
+}

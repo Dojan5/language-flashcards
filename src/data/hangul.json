@@ -1,0 +1,55 @@
+{
+    "vowels": [
+        {
+            "character": "ㅏ",
+            "romanisation": "a",
+            "svg": ""
+        },
+        {
+            "character": "ㅓ",
+            "romanisation": "eo",
+            "svg": ""
+        },
+        {
+            "character": "ㅗ",
+            "romanisation": "o",
+            "svg": ""
+        },
+        {
+            "character": "ㅜ",
+            "romanisation": "u",
+            "svg": ""
+        },
+        {
+            "character": "ㅡ",
+            "romanisation": "eu",
+            "svg": ""
+        },
+        {
+            "character": "ㅣ",
+            "romanisation": "i",
+            "svg": ""
+        },
+        {
+            "character": "ㅑ",
+            "romanisation": "ya",
+            "svg": ""
+        },
+        {
+            "character": "ㅕ",
+            "romanisation": "yeo",
+            "svg": ""
+        },
+        {
+            "character": "ㅛ",
+            "romanisation": "yo",
+            "svg": ""
+        },
+        {
+            "character": "ㅠ",
+            "romanisation": "yu",
+            "svg": ""
+        }
+    ],
+    "doubles": []
+}

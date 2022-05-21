@@ -1,0 +1,47 @@
+@use './abstracts/' as abstracts;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import 'material-symbols';
+@import 'normalize.css';
+
+:root {
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @include abstracts.bgclr(light);
+    @include abstracts.clr-variables(light);
+    
+}
+
+[data-theme="dark"] {
+    @include abstracts.bgclr(dark);
+    @include abstracts.clr-variables(dark);
+}
+
+body {
+    background-color: var(--bg-secondary);
+    color: var(--theme-text);
+    //Enable smooth theme switching
+    $trans: 250ms ease-in-out;
+    &, & > * {
+        transition: background-color $trans,
+                    color $trans;
+    }
+}
+
+#app-root {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+@import './components/drawer';
+@import './components/flashcard';
+@import './components/button';
+@import './components/switch';

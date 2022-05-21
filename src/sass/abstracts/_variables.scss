@@ -1,0 +1,60 @@
+@use 'sass:color';
+
+
+//Colours
+$red: hsl(0.00,65.08%,50.59%);
+$blue: hsl(209.84,78.72%,46.08%);
+$green: hsl(122.79,43.43%,38.82%);
+$orange: hsl(37.65,100.00%,45.00%);
+
+$color-map: (
+    "dark": (
+        "red": $red,
+        "blue": $blue,
+        "green": $green,
+        "orange": $orange
+    ),
+    "light": (
+        "red": color.scale($red, $saturation: 50%, $lightness: 40%),
+        "blue": color.scale($blue, $saturation: 30%, $lightness: 40%),
+        "green": color.scale($green, $saturation: 30%, $lightness: 40%),
+        "orange": color.scale($orange, $saturation: 50%, $lightness: 30%),
+    )
+);
+
+$backgrounds: (
+    "light":(
+        bg-primary: #DDD,
+        bg-secondary: #EEE,
+        bg-tertiary: #FFF,
+        theme-text: #222,
+        overlay-primary: '0, 0, 0',
+        overlay-secondary: '100, 100, 100'
+    ),
+    "dark":(
+        bg-primary: #111,
+        bg-secondary: #222,
+        bg-tertiary: #333,
+        theme-text: #EEE,
+        overlay-primary: '100, 100, 100',
+        overlay-secondary: '0, 0, 0'
+    )
+);
+
+//Sizing
+$breakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+);
+
+//Gap
+$gap-values: (
+    "sm": .5rem,
+    "md": 1rem,
+    "lg": 1.5rem
+);
+
+$radius: 6px;

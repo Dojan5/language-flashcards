@@ -1,0 +1,63 @@
+@use '../abstracts/' as abstracts;
+//@use 'sass:calc';
+
+$size: 48px;
+$margin: 8px;
+
+$trans: all 250ms ease-in-out;
+
+.switch {
+    display: flex;
+    background-color: var(--bg-tertiary);
+    height: $size;
+    width: calc(#{$size} * 2);
+    border: 2px solid var(--bg-tertiary);
+    border-radius: 72px;
+    user-select: none;
+    transition: $trans;
+    box-shadow: inset 0 0 1rem .25rem var(--bg-primary);
+    & input[type=checkbox] { display: none; }
+    & label {
+        position: relative;
+        margin: calc($margin / 2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--theme-text);
+        width: calc($size - $margin);
+        height: calc($size - $margin);
+        border-radius: $size;
+        transition: $trans;
+        color: var(--bg-tertiary);
+    }
+    & input[type=checkbox]:checked + label {
+        margin-left: calc(100% - calc($size - $margin / 2));
+    }
+    &.theme {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        & label {
+            background-color: navy;
+            color: lavenderblush;
+        }
+        & input[type=checkbox]:checked + label {
+            transform: rotate(180deg);
+            background-color: skyblue;
+            color: rgb(253, 253, 103);
+        }
+    }
+    &:hover, & label:hover {
+        .switch label::after {
+            display: block;
+            position: absolute;
+            background-color: red;
+            content: ' ';
+            width: 128px;
+            height: 128px; 
+        }
+    }
+    &, & > * {
+        cursor: pointer;
+    }
+}

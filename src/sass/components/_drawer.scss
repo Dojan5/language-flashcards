@@ -1,0 +1,68 @@
+@use '../abstracts/' as abstracts;
+
+$drawer-button-size: 64px;
+
+.drawer {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    &.active {
+        left: 0;
+        right: 0;
+        transform: initial;
+        @include abstracts.backdrop;
+    }    
+    &-contents {
+        display: flex;
+        flex-direction: column;
+        padding: abstracts.gap(md);
+        position: relative;
+        transform: translateX(-100%);
+        background-color: var(--bg-tertiary);
+        width: 80vw;
+        max-width: 300px;
+        transition: all 250ms ease-in-out;
+        box-shadow: 0 0 1rem 0rem var(--bg-primary);
+        &.active {
+            transform: translateX(0);
+            & button.mobile-toggle {
+                left: calc(100% - #{$drawer-button-size} - 1rem);
+            }
+        }
+        & button.mobile-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--theme-text);
+            border: none;
+            background: none;
+            position: absolute;
+            left: calc(100% + 1rem);
+            top: 1rem;
+            width: $drawer-button-size;
+            height: $drawer-button-size;
+            transition: all 250ms ease-in-out;
+            & span {
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+@include abstracts.mq(lg) {
+    .drawer {
+        position: static;
+        &.active {
+            left: initial;
+            right: initial;
+        }
+        &-contents {
+            transform: initial;
+            & button.mobile-toggle {
+                display: none;
+            }
+        }
+    }
+}
