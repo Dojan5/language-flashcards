@@ -5,16 +5,18 @@ export interface IButton {
     children?: ReactNode;
     color?: "red" | "green" | "orange" | "blue";
     onClick?: () => void;
+    size?: "small" | "medium" | "large";
 }
 
-export const Button: FC<IButton> = ({ icon, children, color, onClick }) => {
+export const Button: FC<IButton> = ({ icon, children, color, size, onClick }) => {
     let buttonColor = color ? color : "";
+    let buttonSize = size ? size : ""; 
 
     if(icon) {
         return (
             <button
                 type="button" 
-                className={`button icon ${buttonColor}`}
+                className={`button icon ${buttonColor} ${buttonSize}`}
                 onClick={onClick}
             >
                 {icon}
@@ -26,7 +28,7 @@ export const Button: FC<IButton> = ({ icon, children, color, onClick }) => {
     return (
         <button 
             type="button" 
-            className={`button ${buttonColor}`}
+            className={`button ${buttonColor} ${buttonSize}`}
             onClick={onClick}
         >
             {children}

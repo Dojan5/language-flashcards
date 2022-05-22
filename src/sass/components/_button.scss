@@ -1,6 +1,7 @@
 @use '../abstracts/' as abstracts;
 
 .button {
+    $size: abstracts.gap("md");
     position: relative;
     display: flex;
     background-color: var(--bg-primary);
@@ -9,11 +10,10 @@
     @include abstracts.radius("sm");
     border: none;
     box-shadow: 0px .5rem .5rem 0rem var(--bg-primary);
-    padding: 1rem 2rem;
+    padding: $size calc($size * 2);
     align-items: center;
     overflow: hidden;
     user-select: none;
-    margin: 1rem;
     cursor: pointer;
     @include abstracts.clr-props();
     &:hover {
@@ -27,15 +27,31 @@
 }
 
 .button.icon {
-    padding: 0 2rem 0 0;
+    $size: abstracts.gap("md");
+    padding: 0 calc($size * 2) 0 0;
     & span {
         display: inline-block;
         color: var(--theme-text);
         background-color: rgba(var(--overlay-secondary),.1);
-        margin-right: 2rem;
+        margin-right: calc($size * 2);
         content:attr(data-value);
-        padding: 1rem 1.25rem;
+        padding: $size calc($size * 1.25);
         border-right: 2px solid rgba(var(--overlay-primary), .05);
         box-shadow: inset 0 0 .5rem .5rem rgba(var(--overlay-secondary), .075);
+    }
+    &.small {
+        $size: abstracts.gap("sm");
+        padding: 0 calc($size * 2) 0 0;
+        & span {
+            padding: $size calc($size * 1.25);
+            margin-right: calc($size * 2);
+        }
+    }
+    &.large {
+        $size: abstracts.gap("lg");
+        padding: 0 calc($size * 2) 0 0;
+        & span {
+            padding: $size calc($size * 1.25);
+        }
     }
 }
