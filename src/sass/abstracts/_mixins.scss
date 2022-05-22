@@ -39,3 +39,8 @@
         }
     }
 }
+
+@mixin radius($size: md) {
+    $val: map.get(variables.$radii, $size);
+    border-radius: $val;
+}

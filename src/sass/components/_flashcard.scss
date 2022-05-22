@@ -19,7 +19,7 @@
     justify-self: center;
     min-width: 300px;
     min-height: 450px;
-    border-radius: 1rem;
+    @include abstracts.radius("lg");
     box-shadow: 0rem .5rem 1rem -.25rem var(--bg-primary);
     & .character {
         user-select: none;
