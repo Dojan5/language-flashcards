@@ -20,7 +20,7 @@
         &::after {
             position: absolute;
             content: ' ';
-            background-color: rgba(var(--overlay-primary), .05);
+            background-color: rgba(var(--overlay-primary), .1);
             inset: 0;
         }
     }
