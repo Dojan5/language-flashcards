@@ -47,16 +47,6 @@ $trans: all 250ms ease-in-out;
             color: rgb(253, 253, 103);
         }
     }
-    &:hover, & label:hover {
-        .switch label::after {
-            display: block;
-            position: absolute;
-            background-color: red;
-            content: ' ';
-            width: 128px;
-            height: 128px; 
-        }
-    }
     &, & > * {
         cursor: pointer;
     }
