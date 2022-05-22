@@ -23,8 +23,8 @@ export const Drawer:React.FC<IDrawer> = ({children}) => {
                     onClick={() => setActive(!active)}
                     >
                         {active 
-                            ? (<span className="material-symbols-outlined">menu</span>) 
-                            : (<span className="material-symbols-outlined">close</span>)}
+                            ? (<span className="material-symbols-outlined">close</span>) 
+                            : (<span className="material-symbols-outlined">menu</span>)}
                     </button>
                 {children}
             </div>
