@@ -1,9 +1,11 @@
-import { Drawer, Content, Flashcard, FlashcardContainer, ThemeToggler, Button, SettingsDialogue } from './components';
+import React, { FC, ReactNode } from 'react';
+import { Drawer, Content, Flashcard, FlashcardContainer, ThemeToggler, SettingsDialogue } from './components';
+import AppStateProvider from './data/application-context';
 
-const App = () => {
-
+const App: FC<ReactNode> = () => {
+  
   return (
-    <>
+    <AppStateProvider>
       <Drawer>
         <h1>Flashcards</h1>
         <SettingsDialogue />
@@ -14,7 +16,7 @@ const App = () => {
           <Flashcard />
         </FlashcardContainer>
       </Content>
-    </>
+    </AppStateProvider>
   )
 }
 
