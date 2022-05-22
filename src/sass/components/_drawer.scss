@@ -1,16 +1,19 @@
 @use '../abstracts/' as abstracts;
 
-$drawer-button-size: 64px;
+$drawer-button-size: 52px;
 
 .drawer {
     display: flex;
     position: fixed;
     top: 0;
     bottom: 0;
+    width: 0;
     z-index: 1000;
+    transition: width 250ms ease-in-out;
     &.active {
         left: 0;
         right: 0;
+        width: initial;
         transform: initial;
         @include abstracts.backdrop;
     }    
@@ -24,7 +27,7 @@ $drawer-button-size: 64px;
         width: 80vw;
         max-width: 300px;
         transition: all 250ms ease-in-out;
-        box-shadow: 0 0 1rem 0rem var(--bg-primary);
+        box-shadow: 0 0 1rem 0rem rgba(0,0,0,.2);
         &.active {
             transform: translateX(0);
             & button.mobile-toggle {
