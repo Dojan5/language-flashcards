@@ -5,7 +5,7 @@ export interface IDrawer {
 }
 
 export const Drawer:React.FC<IDrawer> = ({children}) => {
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(false);
     const drawerClasses = active
     ? 'drawer active'
     : 'drawer';
