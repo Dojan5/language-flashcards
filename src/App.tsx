@@ -1,4 +1,4 @@
-import { Drawer, Content, Flashcard, FlashcardContainer, ThemeToggler, Button } from './components';
+import { Drawer, Content, Flashcard, FlashcardContainer, ThemeToggler, Button, SettingsDialogue } from './components';
 
 const App = () => {
 
@@ -6,6 +6,7 @@ const App = () => {
     <>
       <Drawer>
         <h1>Flashcards</h1>
+        <SettingsDialogue />
       </Drawer>
       <Content>
         <ThemeToggler />

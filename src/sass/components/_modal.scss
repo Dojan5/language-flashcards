@@ -1,0 +1,10 @@
+@use '../abstracts/' as abstracts;
+
+dialog {
+    padding: 0;
+    border: none;
+    @include abstracts.radius("lg");
+    & .content {
+        background-color: orange;
+    }
+}
