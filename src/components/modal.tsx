@@ -36,8 +36,18 @@ export const Modal: FC<IModal> = ({ title, isOpen, onProceed, onClose, children 
                     {children}
                 </div>
                 <div className="controls">
-                    <Button onClick={proceedAndClose}>Proceed</Button>
-                    <Button onClick={onClose}>Close</Button>
+                    <Button 
+                        onClick={onClose}
+                        icon={<span className="material-symbols-outlined">close</span>}
+                        color="red"
+                        size="small"
+                    >Cancel</Button>
+                    <Button 
+                        onClick={proceedAndClose}
+                        icon={<span className="material-symbols-outlined">done</span>} 
+                        color="green"
+                        size="small"
+                    >OK</Button>
                 </div>
             </div>
         </dialog>

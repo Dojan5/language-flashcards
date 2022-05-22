@@ -2,9 +2,34 @@
 
 dialog {
     padding: 0;
-    border: none;
+    border: none !important;
     @include abstracts.radius("lg");
+    background-color: var(--bg-tertiary);
+    color: var(--theme-text);
+    width: 80vw;
+    max-width: 600px;
+    &::backdrop {
+        @include abstracts.backdrop();
+    }
+    box-shadow: 0 1rem 1rem 0rem rgba(0,0,0, .2);
     & .content {
-        background-color: orange;
+        display: flex;
+        flex-direction: column;
+        & .title {
+            text-transform: uppercase;
+            text-align: center;
+        }
+        & .body {
+            padding: 1rem;
+        }
+        & .controls {
+            padding: 1rem;
+            display: flex;
+            justify-content: flex-end;
+            background-color: var(--bg-secondary);
+            & :not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
     }
 }
