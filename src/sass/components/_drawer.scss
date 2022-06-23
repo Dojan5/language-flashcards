@@ -20,7 +20,6 @@ $drawer-button-size: 52px;
     &-contents {
         display: flex;
         flex-direction: column;
-        padding: abstracts.gap(md);
         position: relative;
         transform: translateX(-100%);
         background-color: var(--bg-tertiary);
@@ -28,6 +27,13 @@ $drawer-button-size: 52px;
         max-width: 300px;
         transition: all 250ms ease-in-out;
         box-shadow: 0 0 1rem 0rem rgba(0,0,0,.2);
+        border-right: 2px solid var(--bg-primary);
+        & section {
+            padding: abstracts.gap(md);
+        }
+        & section:first-of-type, & section:last-of-type {
+            background-color: var(--bg-secondary);
+        }
         &.active {
             transform: translateX(0);
             & button.mobile-toggle {

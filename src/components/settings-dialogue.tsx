@@ -14,6 +14,7 @@ export const SettingsDialogue = () => {
             <Button
                 icon={<span className="material-symbols-outlined">settings</span>}
                 onClick={() => setIsOpen(true)}
+                size="large"
             >
                 Settings
             </Button>

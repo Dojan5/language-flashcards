@@ -1,0 +1,9 @@
+@use '../abstracts/' as abstracts;
+
+section.menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    gap: abstracts.gap(lg);
+}

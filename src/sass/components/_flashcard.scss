@@ -55,3 +55,18 @@
         }
     }
 }
+
+section.responses {
+    display: grid;
+    align-self: center;
+    width: 40vw;
+    min-width: 400px;
+    max-width: 800px;
+    grid-template-columns: 1fr;
+    margin-top: 4rem;
+    gap: abstracts.gap(md);
+    padding: 1rem;
+    @include abstracts.mq(lg) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
